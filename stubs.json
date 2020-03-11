@@ -1,0 +1,63 @@
+{
+  "mappings" : [ {
+    "name" : "User info",
+    "request" : {
+      "urlPath" : "/userinfo",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{\"user_id\":\"my-id\",\"user_name\":\"tomakehurst\",\"email\":\"tom@mocklab.io\"}",
+      "headers" : {
+        "Content-Type" : "application/json"
+      }
+    },
+    "persistent" : true,
+    "priority" : 5
+  }, {
+    "name" : "Token",
+    "request" : {
+      "urlPath" : "/oauth/token",
+      "method" : "POST"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{\"access_token\":\"my-fun-token\"}",
+      "headers" : {
+        "Content-Type" : "application/json"
+      }
+    },
+    "persistent" : true,
+    "priority" : 5
+  }, {
+    "name" : "Login handler",
+    "request" : {
+      "urlPath" : "/loginSubmit",
+      "method" : "POST"
+    },
+    "response" : {
+      "status" : 302,
+      "body" : "",
+      "headers" : {
+        "Location" : "{{formData request.body 'form' urlDecode=true}}{{{form.redirectUri}}}?code=oauth_code&state={{{form.state}}}"
+      },
+      "transformers" : [ "response-template" ]
+    },
+    "persistent" : true,
+    "priority" : 5
+  }, {
+    "name" : "Login page",
+    "request" : {
+      "urlPath" : "/oauth/authorize",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "<html>\n<body>\nWelcome to the login page!\n<br />\n<form method=\"POST\" action=\"/loginSubmit\">\n    <input type=\"hidden\" name=\"state\" value=\"{{request.query.state}}\"/>\n    <input type=\"hidden\" name=\"redirectUri\" value=\"{{request.query.redirect_uri}}\"/>\n    <input type=\"text\" name=\"username\" />\n    <input type=\"password\" name=\"password\" />\n    <input id=\"login-submit\" type=\"submit\" />\n</form>\n</body>\n</html>",
+      "headers" : { },
+      "transformers" : [ "response-template" ]
+    },
+    "persistent" : true,
+    "priority" : 5
+  } ]
+}
