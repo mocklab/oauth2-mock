@@ -1,51 +1,219 @@
 {
   "mappings" : [ {
-    "name" : "User info",
+    "id" : "25732b4f-715f-4d56-beea-82fe96fe0862",
+    "name" : "CSS",
     "request" : {
-      "urlPath" : "/userinfo",
+      "url" : "/css/stylesheet.css",
       "method" : "GET"
     },
     "response" : {
       "status" : 200,
-      "body" : "{\"user_id\":\"my-id\",\"user_name\":\"tomakehurst\",\"email\":\"tom@mocklab.io\"}",
-      "headers" : {
-        "Content-Type" : "application/json"
-      }
+      "body" : "body {\n    margin: 0;\n    padding: 0;\n    color: #2f363e;\n    font-family: Cairo,sans-serif;\n    font-size: 18px;\n    line-height: 1.5;\n}\n\nh1, h2, h3, h4, h5, h6 {\n    margin: 2em 0 0.5em;\n    line-height: 1.2;\n    font-family: Cairo,sans-serif;\n    font-weight: bold;\n}\n\np {\n    margin-top: 2em;\n    margin-bottom: 2em;\n}\n\na {\n    color: #40904D;\n}\n\nnav a {\n    text-decoration: none;\n}\n\nnav ul {\n    margin: 0;\n    padding: 0;\n}\n\nnav li {\n    list-style: none;\n}\n\nnav ul li, nav ol li {\n    margin-bottom: 0;\n}\n\n.header-nav {\n    padding: 0 1rem;\n    height: 48px;\n    background: #f1f1f1;\n    border-bottom: solid 1px #c1c1c1;\n}\n\n.sticky {\n    clear: both;\n    position: -webkit-sticky;\n    position: sticky;\n    top: 0em;\n    z-index: 1000;\n}\n\n.header-nav__container {\n    max-width: 1280px;\n    height: 100%;\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-start;\n    align-items: center;\n    padding-left: 1em;\n    margin-left: auto;\n    margin-right: auto;\n}\n\n.header-nav__logo {\n    float: left;\n    margin-right: 1.69492%;\n    height: auto;\n}\n\n.header-nav__item {\n    font-size: 1em;\n    font-weight: bold;\n    margin-right: 1.69492%;\n}\n\n.header-nav__item--last {\n    flex-grow: 100;\n    text-align: right;\n}\n\n.header-nav__logo img {\n    width: 124px;\n    vertical-align: middle;\n}\n\n.header-nav__cta {\n    margin-right: 3em;\n    border-radius: 3px;\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n    text-align: center;\n    font-size: 1em;\n    font-weight: 600;\n    border: none;\n    background-color: #40904D;\n}\n\n.header-nav__cta a {\n    color: white;\n    font-weight: bold;\n}\n\n#main {\n    max-width: 1280px;\n    margin-left: auto;\n    margin-right: auto;\n    clear: both;\n    margin-top: 2em;\n    padding-left: 1em;\n    padding-right: 1em;\n    animation: intro 0.3s both;\n    animation-delay: 0.35s;\n    min-height: 1024px;\n    display: flex;\n}\n\n\n.login-start-button {\n    border: 3px solid #c1c1c1;\n    border-radius: 10px;\n    padding: 10px;\n    margin-top: 1em;\n    margin-bottom: 1em;\n    display: inline;\n    width: 30em;\n    vertical-align: center;\n}\n\n.login-start-button img {\n    height: 30px;\n    margin-right: 10px;\n    vertical-align: text-top;\n}\n\n.logout-button {\n    background-color: transparent;\n    font-family: Cairo,sans-serif;\n    font-weight: bold;\n    font-size: 1em;\n    color: #40904D;\n    border: none;\n    cursor: pointer;\n}\n\n.demo-box {\n    border: 1px solid #c1c1c1;\n    border-radius: 6px;\n    margin-top: 1em;\n    margin-right: 3em;\n    padding: 1em;\n}\n\n.subtitle {\n    color: #c1c1c1;\n    margin-top: -1em;\n}\n\n#callout {\n    max-width: 250px;\n    border: 1px #c1c1c1 solid;\n    padding: 15px;\n    border-radius: 6px;\n    margin-left: 3em;\n    margin-top: 10em;\n}\n\n#callout h2 {\n    margin-top: 0em;\n}\n\n@media only screen and (max-width: 1000px) {\n  #main {\n    flex-direction: column;\n  }\n\n  #callout {\n    margin-right: 3em;\n    margin-bottom: 3em;\n  }\n}\n",
+      "headers" : { }
     },
+    "uuid" : "25732b4f-715f-4d56-beea-82fe96fe0862",
     "persistent" : true,
-    "priority" : 5
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:49.114Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        },
+        "updated" : {
+          "at" : "2020-03-03T15:14:22.362Z",
+          "via" : "ADMIN_API",
+          "by" : "7p1dp"
+        }
+      }
+    }
   }, {
-    "name" : "Token",
+    "id" : "f4f9dfc6-de38-4101-91be-64c3d06219ac",
+    "name" : "Landing page",
     "request" : {
-      "urlPath" : "/oauth/token",
-      "method" : "POST"
+      "url" : "/",
+      "method" : "GET"
     },
     "response" : {
       "status" : 200,
-      "body" : "{\"access_token\":\"my-fun-token\"}",
+      "body" : "<!DOCTYPE html>\n<html>\n<head>\n    {{#if (eq request.requestLine.host 'oauth.mocklab.io')}}\n      <script async src=\"https://www.googletagmanager.com/gtag/js?id=UA-78148205-7\"></script>\n      <script>\n        window.dataLayer = window.dataLayer || [];\n        function gtag(){dataLayer.push(arguments);}\n        gtag('js', new Date());\n        gtag('config', 'UA-78148205-7');\n      </script>\n    {{/if}}\n  \n    <link href=\"https://fonts.googleapis.com/css?family=Cairo:300\" rel=\"stylesheet\"/>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"/css/stylesheet.css\" />\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/favicon.png\">\n\n    <title>Mock OAuth2 / OpenID Connect Login</title>\n</head>\n\n<body>\n    <nav class=\"header-nav sticky\">\n        <ul class=\"header-nav__container\">\n          \n            <li class=\"header-nav__logo\">\n                <a href=\"/\">\n                    <img src=\"https://www.mocklab.io/images/mocklab_logo_with_text.png\" title=\"MockLab logo\">\n                </a>\n            </li>\n            \n            <li class=\"header-nav__item header-nav__item--last\">&nbsp;</li>\n\n            <li class=\"header-nav__cta\">\n                <a href=\"https://app.mocklab.io/login?for=signup\" title=\"Sign up\" target=\"_blank\">Sign up to MockLab</a>\n            </li>\n        </ul>\n\n    </nav>\n  \n  <div id=\"main\">\n    <div id=\"content\">\n      <h1 style=\"margin-top:0em;\">Mock OAuth2 / OpenID Connect Login</h1>\n      <p class=\"subtitle\">Powered by <a href=\"https://get.mocklab.io\" target=\"_new\">MockLab</a></p>\n      \n      <div style=\"display:flex;justify-content: center;margin-bottom:2em\">\n        <img src=\"https://www.mocklab.io/images/oauth-2-logo.png\" alt=\"OAuth2\" style=\"border:none;margin-right:10px;height:90px;width:92px\"/>\n        <img src=\"https://www.mocklab.io/images/openid-icon-100x100.png\" alt=\"OpenID Connect\" style=\"border:none;margin-left:10px;height:90px\"/>\n      </div>\n      \n      <p>\n        This is a simulation of an <strong>OAuth2</strong> / <strong>OpenID Connect</strong> login service for integration and performance testing.\n        <br/>\n        <a href=\"https://www.mocklab.io/docs/oauth2-mock/\" title=\"OAuth2 mock doc\">Learn more</a> or\n        try <a href=\"https://mocklab-demo.herokuapp.com/login\" title=\"Demo\" target=\"_blank\">the demo</a>.\n      </p>\n      \n      <h2>Configuration</h2>\n      \n      <p>\n        Authorization URI: <code>{{request.requestLine.baseUrl}}/oauth/authorize</code><br/>\n        Token URI: <code>{{request.requestLine.baseUrl}}/oauth/token</code><br/>\n        User info URI: <code>{{request.requestLine.baseUrl}}/userinfo</code><br/>\n        JWKS URI: <code>{{request.requestLine.baseUrl}}/.well-known/jwks.json</code><br/>\n      </p>\n    </div>\n  </div>\n</body>\n</html>",
+      "headers" : { },
+      "transformers" : [ "response-template" ]
+    },
+    "uuid" : "f4f9dfc6-de38-4101-91be-64c3d06219ac",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:49.087Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        },
+        "updated" : {
+          "at" : "2020-03-03T17:40:53.57Z",
+          "via" : "ADMIN_API",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "e5c94f05-740e-46fc-857a-3e79698fdaf3",
+    "name" : "JWKS",
+    "request" : {
+      "url" : "/.well-known/jwks.json",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{{{jwks}}}",
       "headers" : {
         "Content-Type" : "application/json"
+      },
+      "transformers" : [ "response-template", "rate-limit" ],
+      "transformerParameters" : {
+        "rateLimitName" : "authentication"
       }
     },
+    "uuid" : "e5c94f05-740e-46fc-857a-3e79698fdaf3",
     "persistent" : true,
-    "priority" : 5
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:49.045Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
   }, {
+    "id" : "95900ca1-6688-4eab-b8c4-a5fc8107c420",
+    "name" : "Favicon",
+    "request" : {
+      "url" : "/favicon.png",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "base64Body" : "iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AcYDC8A5hvTSwAABI1JREFUWMO11m2IXWcRB/Df85x7Ny9tYivpq4La2hahiiCazaZ2FzVCP4hKo+AnrYKuolXSJGgqGhFBTGIhKqkWaj6kon4oCopCU7MbmjfBiFaJlZAWShJDEqK2WXf33nvGD+du9mRzk91tsn+43HPPzDPzn5lnZm4yT2w5MAQJi7rfIrRS1t7QPzJfc5WBK2HbgSF9ixeZ+N/4Crwd78I9uLF2/jyO4TAO55ROoFy3anZClyXw/b1D0mTSWRJvkmIt1uJeXHeZc4EJHMVvJLuydGQ2Ij0JbN0/KLEkeBDr8A4U88zuMfw48URwbv3A6OwEHjv0Pu12h5RWJPF1fAbX94i0hWbtfLv7vjlDt4VfYZMyHdUI6/tHexPYPLLGskWTItJtxGPdlNejnsRf8DucwXewrCv7PX6BNXg/bplBZC+GIxwpimxd/54Lgjz1sKxvkrCc2IyPzXB+BA/jQxHxTezuRj2F49iZUvo0PoynMF6T34+tKbm9LMuLmGX43r4hY5PNFDyET9aIdfBrfLzU+Ekpn0rp8o3zyKqRieBQRBrGJpyriR/AxiQt2la18jSBnMKSvtY78WVVf0/V+ml8Qfhbzu3YOLDHbNgwMCpHvJo6foBv4JVauT8V4gMhbH2uIpG3HRiSUmric3hLzdYhfBUnGql9yeW5Eh65b5RCO0lP4MluMPA6fFYnTd0dOSJExN3dFE3hv/hu4lgZyVcG9s3Z+QUSA6NCTOCHeL4mGpTj3XJMlwCDeGNN6Vll2h2RbFw9Mm/n00g6jfGj+OWMLDyQ26UtB4dkZe7DfTUyk3hajvPrr8o56wdGFO3FVK17tibq7zSK1yvJcrkCd9WEp/DHq/J8KV7CP2u/35zETUnIWI7basIXSafnsKfmiCTkVyq7F3Cj7oRtFMl44jncgBwcaDE2i/vzGFVNwkI1qHoitymWlq2ybV/iZtVsGVdddI1HD/edw89V/Z9xbOxMntjywYkrEXhZNS2nEJdTXHf/iKVfWgkH8W+Uqil6BlKxfc29+ANu6p7ZiYc6Dz9zTQrQGF6p3WkpiuYODNcyOIg/5R5nrlXxL6SmKJrXubjNJ1SbUn4tRueN5Ba8rfbmpHBO0FhQx8P9VQ7CyhkZ+LuUTi14BgpBshyfML3kOthNTHYeP7hwBPLnVypKhI+o/qRM4YVg91TbLAiBxvB7KLNOtgqPYmlXVOJnN//j1hfLJRMLQyANr9JOzZRSuRo/wt018X5i5+l7/sWdJyuy18zz8Hs107gyyhtEuRZfwx01jRP4dop8vMwlXzx1lQQ236H58hvE4vEiOvl6Jm8vIw+oJuQgFte0T2NTLuKZKCl3TO+6XgRW46fF9jVXGkhZ8kJ59tXfauUNqmV2F27tYfMENpF3lZ2IzuMHLxL2IvDW7mc27MdfuxE3e8g72IdvFY1yT9mJaO+4dMsvxCCaVG3HXcRTkpOdsazz5KGeyg3VZjqr2gExRycN1WabVG21spvq5/FssLfsax1PImL7n2c19BI++hqyMaa6XGvQifCflNIZtMpunecSzf8BAfiTd64y2vUAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTYtMDctMjRUMTI6NDc6MDArMDE6MDBVUQnnAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE2LTA3LTI0VDEyOjQ3OjAwKzAxOjAwJAyxWwAAAABJRU5ErkJggg==",
+      "headers" : {
+        "Content-Type" : "image/png"
+      }
+    },
+    "uuid" : "95900ca1-6688-4eab-b8c4-a5fc8107c420",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:49.011Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "a45e2815-9ec8-41d2-b7f9-b351ef36cde3",
+    "name" : "User info",
+    "request" : {
+      "urlPath" : "/userinfo",
+      "method" : "GET",
+      "headers" : {
+        "Authorization" : {
+          "contains" : "Bearer "
+        }
+      }
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{{#trim}}\n{{#assign 'accessToken'}}{{{regexExtract request.headers.Authorization.0 '[^\\s]*$'}}}{{/assign}}\n{{regexExtract (base64 accessToken decode=true) '(.+?)\\.\\.(.+?)$' 'parts'}}\n{{#assign 'email'}}{{{parts.1}}}{{/assign}}\n{{#assign 'sub'}}{{{base64 email}}}{{/assign}}\n{\n    \"email\": \"{{{email}}}\",\n    \"sub\": \"{{{sub}}}\"\n}\n{{/trim}}",
+      "headers" : {
+        "Content-Type" : "application/json"
+      },
+      "transformers" : [ "response-template", "rate-limit" ],
+      "transformerParameters" : {
+        "rateLimitName" : "authentication"
+      }
+    },
+    "uuid" : "a45e2815-9ec8-41d2-b7f9-b351ef36cde3",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.974Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "bc571e51-e324-4e51-bb6b-1fbd74df1b65",
+    "name" : "Token",
+    "request" : {
+      "urlPath" : "/oauth/token",
+      "method" : "POST",
+      "bodyPatterns" : [ {
+        "contains" : "code="
+      } ]
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "{{#trim}}\n{{formData request.body 'form' urlDecode=true}}\n{{regexExtract (base64 form.code decode=true) '(.+?)\\.\\.(.+?)\\.\\.(.+?)\\.\\.(.*)$' 'parts'}}\n{{#assign 'emailAddress'}}{{{parts.1}}}{{/assign}}\n{{#assign 'clientId'}}{{{parts.2}}}{{/assign}}\n{{#assign 'nonce'}}{{{parts.3}}}{{/assign}}\n{{#assign 'subject'}}{{{base64 emailAddress}}}{{/assign}}\n{{#assign 'accessToken'}}{{{base64 (stringFormat 'access..%s' emailAddress)}}}{{/assign}}\n{{#assign 'idToken'}}{{#trim}}\n{{{jwt alg='RS256' email=emailAddress iss=request.requestLine.baseUrl aud=clientId sub=subject nonce=nonce}}}\n{{/trim}}{{/assign}}\n\n{\n  \"access_token\":\"{{{accessToken}}}\",\n  \"token_type\": \"Bearer\",\n  \"id_token\": \"{{{idToken}}}\"\n}\n{{/trim}}",
+      "headers" : {
+        "Content-Type" : "application/json"
+      },
+      "transformers" : [ "response-template", "rate-limit" ],
+      "transformerParameters" : {
+        "rateLimitName" : "authentication"
+      }
+    },
+    "uuid" : "bc571e51-e324-4e51-bb6b-1fbd74df1b65",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.949Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "0d797c8b-0f54-4832-b9b7-3622761e906d",
     "name" : "Login handler",
     "request" : {
-      "urlPath" : "/loginSubmit",
+      "urlPath" : "/login",
       "method" : "POST"
     },
     "response" : {
       "status" : 302,
       "body" : "",
       "headers" : {
-        "Location" : "{{formData request.body 'form' urlDecode=true}}{{{form.redirectUri}}}?code=oauth_code&state={{{form.state}}}"
+        "Location" : "{{formData request.body 'form' urlDecode=true}}{{#assign 'code'}}{{{base64 (stringFormat 'auth..%s..%s..%s' form.email form.clientId form.nonce)}}}{{/assign}}{{{form.redirectUri}}}?code={{{urlEncode code}}}&state={{{form.state}}}"
       },
-      "transformers" : [ "response-template" ]
+      "transformers" : [ "response-template", "rate-limit" ],
+      "transformerParameters" : {
+        "rateLimitName" : "authentication"
+      }
     },
+    "uuid" : "0d797c8b-0f54-4832-b9b7-3622761e906d",
     "persistent" : true,
-    "priority" : 5
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.924Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
   }, {
+    "id" : "90971378-e2f3-4dee-ad4d-e9b783e85cfb",
     "name" : "Login page",
     "request" : {
       "urlPath" : "/oauth/authorize",
@@ -53,11 +221,111 @@
     },
     "response" : {
       "status" : 200,
-      "body" : "<html>\n<body>\nWelcome to the login page!\n<br />\n<form method=\"POST\" action=\"/loginSubmit\">\n    <input type=\"hidden\" name=\"state\" value=\"{{request.query.state}}\"/>\n    <input type=\"hidden\" name=\"redirectUri\" value=\"{{request.query.redirect_uri}}\"/>\n    <input type=\"text\" name=\"username\" />\n    <input type=\"password\" name=\"password\" />\n    <input id=\"login-submit\" type=\"submit\" />\n</form>\n</body>\n</html>",
+      "body" : "<!DOCTYPE html>\n<html>\n  <head>\n    <style type=\"text/css\">\n      body {\n        font-family: sans-serif;   \n      }\n      \n      #login-box {\n        max-width: 400px;\n        margin-left:auto;\n        margin-right: auto;\n        margin-top: 100px;\n        border: 1px solid black;\n        padding: 15px\n      }\n      \n      .text-input {\n        height: 1.5rem;\n        width: 20rem;\n      }\n      \n      .help-text {\n          max-width: 600px;\n          margin-left: auto;\n          margin-right: auto;\n          margin-top: 50px;\n          text-align: center;\n          color: darkgray;\n          line-height: 1.5em;\n          font-weight: lighter;\n          font-size: 1.5em;\n          padding: 15px;\n      }\n      \n      @media (max-width: 1000px) {\n        body {\n          font-size: 24px;\n        }\n        \n        label {\n          font-size: 38px;\n        }\n        \n        .text-input {\n            height: 1.5em;\n            width: 100%;\n            font-size: 2em;\n        }\n        \n        #login-box {\n          max-width: 100%;\n        }\n        \n        .help-text {\n          max-width: 100%;\n        }\n      }\n    </style>\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/favicon.png\">\n    <title>Simulated OAuth2 / OpenID Connect Login - Powered by MockLab</title>\n  </head>\n<body>\n  <div id=\"login-box\">\n    <div id=\"logos\" style=\"text-align: center;margin-top:15px;margin-bottom:15px\">\n      <a href=\"http://mocklab.io\" target=\"_new\">\n        <img src=\"https://www.mocklab.io/images/mocklab_logo_with_text.png\" alt=\"MockLab\" style=\"height:50px\"/>\n      </a>\n    </div>\n    <p>Simulated OAuth2 / OpenID Connect login service, powered by <a href=\"http://mocklab.io\" target=\"_new\">MockLab</a></p>\n    <br />\n    {{#eq request.query.error.0 'invalidUser'}}\n    <p style=\"color: red\">Error: not a recognised user</p>\n    {{/eq}}\n    <form method=\"POST\" action=\"/login\">\n      <input type=\"hidden\" name=\"state\" value=\"{{request.query.state}}\"/>\n      <input type=\"hidden\" name=\"redirectUri\" value=\"{{request.query.redirect_uri}}\"/>\n      <input type=\"hidden\" name=\"clientId\" value=\"{{request.query.client_id}}\"/>\n      <input type=\"hidden\" name=\"nonce\" value=\"{{request.query.nonce}}\"/>\n      \n      <label for=\"email\">Email:</label><br />\n      <input class=\"text-input\" type=\"email\" name=\"email\" placeholder=\"yours@example.com\"/><br /><br />\n      \n      <label for=\"password\">Password:</label><br />\n      <input class=\"text-input\" type=\"password\" name=\"password\" />\n      \n      <br /><br />\n      <input id=\"login-submit\" type=\"submit\" value=\"Login\" style=\"font-size: 200%\" />\n    </form>\n  </div>\n  \n  <div class=\"help-text\">\n    How to use: enter any email address and password. It doesn't matter if they don't exist.\n  </div>\n</body>\n</html>",
       "headers" : { },
+      "transformers" : [ "response-template", "rate-limit" ],
+      "transformerParameters" : {
+        "rateLimitName" : "authentication"
+      }
+    },
+    "uuid" : "90971378-e2f3-4dee-ad4d-e9b783e85cfb",
+    "persistent" : true,
+    "priority" : 5,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.873Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "f5f4e020-81a0-4a56-8452-5330e6a8bb15",
+    "name" : "Test success",
+    "request" : {
+      "urlPath" : "/test-success",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 200,
+      "body" : "<!DOCTYPE html>\n<html>\n  <head>\n    <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"/favicon.png\"/>\n    <title>Simulated Auth0 Test Success Page - Powered by MockLab</title>\n  </head>\n<body>\n  <h1>Success!</h1>\n</body>\n</html>",
+      "headers" : {
+        "Content-Type" : "text/html"
+      },
       "transformers" : [ "response-template" ]
     },
+    "uuid" : "f5f4e020-81a0-4a56-8452-5330e6a8bb15",
     "persistent" : true,
-    "priority" : 5
-  } ]
+    "priority" : 7,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.837Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "d61fe0b3-c735-43f3-aa76-d5e8a91313b7",
+    "name" : "Test redirect",
+    "request" : {
+      "urlPath" : "/test-auth",
+      "method" : "GET"
+    },
+    "response" : {
+      "status" : 302,
+      "body" : "",
+      "headers" : {
+        "Location" : "{{request.requestLine.baseUrl}}/oauth/authorize?redirect_uri={{request.requestLine.baseUrl}}/test-success&state=123"
+      },
+      "transformers" : [ "response-template" ]
+    },
+    "uuid" : "d61fe0b3-c735-43f3-aa76-d5e8a91313b7",
+    "persistent" : true,
+    "priority" : 7,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.813Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  }, {
+    "id" : "4f07d7c8-bcfa-41d1-8dce-492033b70cb0",
+    "name" : "Login handler - invalid user",
+    "request" : {
+      "urlPath" : "/login",
+      "method" : "POST"
+    },
+    "response" : {
+      "status" : 302,
+      "body" : "",
+      "headers" : {
+        "Location" : "{{formData request.body 'form' urlDecode=true}}{{#assign 'code'}}{{base64 form.email}}{{/assign}}{{{form.redirectUri}}}?code={{code}}&state={{{form.state}}}"
+      },
+      "transformers" : [ "response-template", "rate-limit" ],
+      "transformerParameters" : {
+        "rateLimitName" : "authentication"
+      }
+    },
+    "uuid" : "4f07d7c8-bcfa-41d1-8dce-492033b70cb0",
+    "persistent" : true,
+    "priority" : 7,
+    "metadata" : {
+      "mocklab" : {
+        "created" : {
+          "at" : "2020-03-03T13:43:48.717Z",
+          "via" : "STUB_IMPORT",
+          "by" : "7p1dp"
+        }
+      }
+    }
+  } ],
+  "meta" : {
+    "total" : 11
+  }
 }
